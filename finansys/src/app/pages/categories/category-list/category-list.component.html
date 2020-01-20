@@ -47,13 +47,13 @@
                 <button (click)="alert('Excluir')" class="btn btn-outline-danger btm-sm">Excluir</button>
             </td>
         </tr>
-        <tr>
+        <tr *ngFor="let category of categories">
             <td>
                 <strong>Lazer</strong><br>
                 <small>Cinema, Parque, Praia, etc</small>
             </td>
             <td>
-                <a [routerLink]="[12,'edit']" class="btn btn-outline-info btm-sm mr-2">Editar</a>
+                <a [routerLink]="[category.id,'edit']" class="btn btn-outline-info btm-sm mr-2">Editar</a>
                 <button (click)="alert('Excluir')" class="btn btn-outline-danger btm-sm">Excluir</button>
             </td>
         </tr>

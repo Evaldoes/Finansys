@@ -17,14 +17,14 @@ export class CategoryService {
   getAll(): Observable<Category[]>{
     return this.http.get(this.apiPath).pipe(
       catchError(this.handleError),
-      map(this.jsonDataToCategories)
+      map(this.jsonDataToCategories)    
     )
   }
 
   getById(id: number): Observable<Category>{
     const url = '${this.apiPath}/${id}';
 
-    return this.apiPath.http.get(url).pipe(
+    return this.http.get(url).pipe(
       catchError(this.handleError),
       map(this.jsonDataToCategory)
     )
